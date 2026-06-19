@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 平台概览</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f9fafb;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e1e2a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem 5rem;
+        }
+
+        /* ----- hero ----- */
+        .hero {
+            margin-bottom: 3.8rem;
+            padding: 2rem 0 1.5rem;
+            border-bottom: 1px solid #e2e6ed;
+        }
+
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: #12121c;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: #5f6670;
+            max-width: 520px;
+            margin-top: 0.3rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #eaeef4;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #2d3848;
+            margin-top: 0.6rem;
+        }
+
+        /* ----- section ----- */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.65rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid #dce1e9;
+            display: inline-block;
+            color: #111;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin: 1.4rem 0 0.4rem;
+            color: #1e293b;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            padding: 1.6rem 1.8rem;
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02), 0 6px 20px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            background: #f6f8fc;
+            padding: 1rem 1.2rem;
+            border-radius: 10px;
+            border-left: 3px solid #9aaec9;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+        }
+
+        .feature-item span {
+            font-size: 0.88rem;
+            color: #475569;
+        }
+
+        .scene-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .scene-list li {
+            padding: 0.65rem 0 0.65rem 1.8rem;
+            position: relative;
+            border-bottom: 1px dashed #e9edf2;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        .scene-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #788aa8;
+        }
+
+        .faq-block {
+            background: #f3f5f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+
+        .faq-block dt {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+            color: #0f172a;
+        }
+
+        .faq-block dd {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-block dd:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ----- footer / 链接句 ----- */
+        .footer-note {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2e6ed;
+            font-size: 0.95rem;
+            color: #3b4a5c;
+            line-height: 1.7;
+        }
+
+        .footer-note a {
+            color: #1e3a6b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b4c3d6;
+            transition: border-color 0.2s;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1e3a6b;
+        }
+
+        .footer-meta {
+            margin-top: 2rem;
+            font-size: 0.82rem;
+            color: #7a8797;
+        }
+
+        /* ----- responsive ----- */
+        @media (max-width: 600px) {
+            .page { padding: 2rem 1.2rem 3.5rem; }
+            .hero-title { font-size: 2rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .intro-card { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero -->
+        <header class="hero">
+            <div class="hero-title">爱游戏</div>
+            <div class="hero-sub">一份面向使用者的简明平台说明 —— 快速理解网站定位与核心价值。</div>
+            <span class="hero-tag">📋 游戏索引 · 内容聚合</span>
+        </header>
+
+        <!-- 背景说明  -->
+        <section>
+            <h2>一 · 平台背景</h2>
+            <div class="intro-card">
+                <p><strong>爱游戏</strong> 是一个以游戏信息索引为定位的中立型站点，主要帮助用户在海量互联网内容中快速定位自己感兴趣的游戏资料、版本动态以及社区讨论。站内并不直接提供游戏下载或充值入口，而是通过结构化的导航与分类，降低信息查找成本。</p>
+                <p>网站内容覆盖单机、联机、移动端及部分独立游戏，更新频率稳定，条目附带简要说明与来源标记。无论你是想确认某款游戏的发行时间，还是希望了解近期的热门更新，都可以从这里获得相对清晰的线索。</p>
+            </div>
+        </section>
+
+        <!-- 三段自然介绍 -->
+        <section>
+            <h2>二 · 核心特点</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <strong>分类清晰</strong>
+                    <span>按类型、年代、平台多维度整理，减少逐页翻阅的麻烦。</span>
+                </div>
+                <div class="feature-item">
+                    <strong>信息精炼</strong>
+                    <span>每一条目均提炼关键信息，避免冗长评测或无关内容干扰。</span>
+                </div>
+                <div class="feature-item">
+                    <strong>来源可溯</strong>
+                    <span>重要数据附参考来源，方便进一步核实或深入阅读。</span>
+                </div>
+                <div class="feature-item">
+                    <strong>检索友好</strong>
+                    <span>支持关键词快速定位，同时提供常用标签与热门列表。</span>
+                </div>
+            </div>
+
+            <h2>三 · 典型使用场景</h2>
+            <ul class="scene-list">
+                <li>想快速查找某款游戏的正式名称与发行日期，避免被非官方信息误导。</li>
+                <li>关注特定系列或开发商的游戏列表，了解其作品线脉络。</li>
+                <li>对比不同平台的版本差异或更新日志，辅助决定入手指南。</li>
+                <li>在游戏社区讨论前，先确认基础事实，提升交流效率。</li>
+                <li>发现冷门但品质不错的独立游戏，拓宽自己的游戏视野。</li>
+            </ul>
+
+            <h2>四 · 常见疑问摘要</h2>
+            <dl class="faq-block">
+                <dt>网站是否需要注册或付费？</dt>
+                <dd>目前所有索引内容均可直接浏览，无需登录或付费。部分外部链接可能导向第三方社区或商店，爱游戏不对其内容负责。</dd>
+                <dt>信息多久更新一次？</dt>
+                <dd>主要游戏条目随版本发布或重大事件进行更新，日常维护频率约为每周 1–2 次。遇到新作发售或大型补丁时会相应加快节奏。</dd>
+                <dt>可以提交游戏建议或纠错吗？</dt>
+                <dd>如果你发现信息存在偏差或遗漏，可通过站内反馈渠道提交说明，运营团队会在核实后进行调整。</dd>
+            </dl>
+        </section>
+
+        <!-- 页尾访问提示（自然嵌入链接） -->
+        <div class="footer-note">
+            <p>若你想直接浏览完整的游戏索引目录，可以访问 <a href="https://app-index-i-game.com.cn">爱游戏</a> 主页。站点结构以列表式导航为主，首页展示近期更新的条目与分类入口，方便你快速跳转至感兴趣的区域。</p>
+            <p>建议将 <strong>爱游戏</strong> 加入书签，以便日后随时回来检索。同时请注意，本站所有内容仅供信息参考，不构成任何形式的推荐或商业引导。</p>
+            <div class="footer-meta">
+                <span>爱游戏 · 索引页 v1.0</span>  <span style="margin-left:1.2rem;">更新于当月</span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ructray.github.io/app-index-i-game-com-cn/sitemap.xml
