@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · bet365 资料整理</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f2f4f7;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 (hero) */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2b 0%, #1a2f40 70%, #1e3a4a 100%);
+            color: #e6edf3;
+            padding: 3.8rem 2rem 3.2rem;
+            text-align: center;
+            box-shadow: inset 0 -6px 12px rgba(0,0,0,0.12);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 span {
+            color: #b8d4e8;
+            font-weight: 500;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #b6cdde;
+            max-width: 640px;
+            margin: 0.6rem auto 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 0.8rem;
+        }
+
+        /* 浅色正文区 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2.2rem 1.8rem 3.6rem;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.4rem 2.2rem;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.2rem;
+        }
+
+        .intro-card h2 {
+            font-size: 1.7rem;
+            font-weight: 450;
+            color: #1f3a4b;
+            margin-bottom: 1rem;
+            border-left: 6px solid #d07b3c;
+            padding-left: 1rem;
+        }
+
+        .intro-card p {
+            color: #2b3e4b;
+            margin: 1rem 0;
+            font-size: 1.05rem;
+        }
+
+        .accent-link {
+            color: #b35f2a;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #83471c;
+            border-bottom: 1px solid #b35f2a;
+        }
+
+        /* 特点/场景网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            background: #f7fafc;
+            border-radius: 20px;
+            padding: 1.3rem 1.4rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            color: #1b3343;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.97rem;
+            color: #3b4f5c;
+        }
+
+        /* 引用块 / 提示 */
+        .insight-box {
+            background: #eef3f8;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2.2rem 0;
+            border-left: 6px solid #d07b3c;
+        }
+
+        .insight-box p {
+            font-size: 1.03rem;
+            color: #1f3849;
+        }
+
+        .insight-box strong {
+            color: #1f3a4b;
+        }
+
+        /* 页尾 */
+        .page-footer {
+            background: #e8ecf0;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin-top: 1.8rem;
+            font-size: 0.98rem;
+            color: #38505e;
+        }
+
+        .page-footer a {
+            color: #9b5b2e;
+            text-decoration: none;
+            border-bottom: 1px dotted #b07c56;
+        }
+
+        .page-footer a:hover {
+            color: #6d421f;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.8rem 0 0.8rem;
+        }
+
+        .faq-mini div {
+            flex: 1 1 180px;
+            background: #fafcfd;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            border: 1px solid #dee5ea;
+        }
+
+        .faq-mini div p:first-child {
+            font-weight: 500;
+            color: #1f3a4b;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-mini div p:last-child {
+            font-size: 0.94rem;
+            color: #3d5564;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-card {
+                padding: 1.8rem 1.2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 1.5rem 1rem 2.5rem;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .hero {
+                padding: 2.6rem 1rem 2.4rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 -->
+<section class="hero">
+    <h1>资料整理 · <span>bet365</span></h1>
+    <p class="sub">信息索引｜归档笔记｜功能简析</p>
+</section>
+
+<!-- 正文区 -->
+<div class="container">
+
+    <!-- 第一段：背景说明 -->
+    <div class="intro-card">
+        <h2>从整理开始</h2>
+        <p>
+            很多人在检索 <a href="https://html-bet365.com" class="accent-link">bet365</a> 相关信息时，面对零散的页面和多个板块，往往需要反复切换。
+            这个页面试图以「资料归档」的角度，把常见功能模块、使用方式以及访问路径整理成一份结构化的参考笔记。
+            内容不替代官方说明，而是帮助快速定位和熟悉整体骨架。
+        </p>
+        <p>
+            无论你是初次接触还是想了解某些细节，这里提供的摘要和指引可以节省一些翻找的时间。
+            当然，最完整的信息仍以原平台展示为准。
+        </p>
+    </div>
+
+    <!-- 第二段：自然介绍 + 特点网格 -->
+    <div class="intro-card">
+        <h2>索引框架与特点</h2>
+        <p>
+            下面几个要点，来自对常见使用场景的归纳。它们并不覆盖全部，但能勾勒出 <a href="https://html-bet365.com" class="accent-link">bet365</a> 在内容结构上的几个核心侧面。
+        </p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>板块归类</h3>
+                <p>体育、娱乐、电子竞技等主要分类都有独立的资料区域，便于按兴趣深入。</p>
+            </div>
+            <div class="feature-item">
+                <h3>实时数据</h3>
+                <p>比分、赛程、统计信息在页面中动态更新，适合快速查阅最新状态。</p>
+            </div>
+            <div class="feature-item">
+                <h3>账户功能</h3>
+                <p>登录、存款、提现、交易记录等模块集中管理，操作路径比较清晰。</p>
+            </div>
+            <div class="feature-item">
+                <h3>语言与地区</h3>
+                <p>多语言界面和区域设定让不同用户的浏览体验更贴合习惯。</p>
+            </div>
+        </div>
+        <p>
+            这些归纳来自实际使用中的观察，算不上全面，但对于初次搭建概念地图应该有些帮助。
+        </p>
+    </div>
+
+    <!-- 第三段：场景与提示 (带 insigh-box) -->
+    <div class="intro-card">
+        <h2>使用场景与技巧</h2>
+        <div class="insight-box">
+            <p><strong>小建议：</strong> 如果主要关注体育赛事，可以直接在顶部导航切换到体育板块，那里汇集了联赛、杯赛以及各类实时赔率变动。日常浏览时，利用搜索栏输入队伍或联赛名称，能更快到达目标页面。</p>
+        </div>
+        <p>
+            对于喜欢探索的用户，可以留意页面底部的“实用链接”区域，其中整理了一些常用指南和常见问题入口。
+            另外，移动端与桌面端的布局略有差异，但核心功能保持一致。
+        </p>
+        <p>
+            资料索引只是起点，真正熟悉还是需要花点时间浏览各个分区。如果你对某个模块特别好奇，不妨从 <a href="https://html-bet365.com" class="accent-link">bet365</a> 的主导航开始，按分类逐层查看。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 (简洁版) -->
+    <div class="intro-card" style="margin-bottom: 1.2rem;">
+        <h2>FAQ 摘要</h2>
+        <div class="faq-mini">
+            <div>
+                <p>如何切换语言？</p>
+                <p>通常页面底部或设置菜单中有语言选项，选择后即刷新。</p>
+            </div>
+            <div>
+                <p>需要注册才能浏览吗？</p>
+                <p>大部分内容可直接浏览，部分个性化功能需登录账户。</p>
+            </div>
+            <div>
+                <p>数据更新频率？</p>
+                <p>赛事数据接近实时，赔率变动频繁，以页面显示为准。</p>
+            </div>
+            <div>
+                <p>是否有帮助中心？</p>
+                <p>常见问题与客服入口一般在页面底部或账户菜单内。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.98rem; color: #3d5564;">
+            以上回答基于公开资料整理，具体细节请以实际页面为准。
+        </p>
+    </div>
+
+</div>
+
+<!-- 页尾访问提示 -->
+<footer class="page-footer">
+    <p>内容索引基于公开信息整理 · 更多资料请直接访问 <a href="https://html-bet365.com">bet365</a> 查看原页面</p>
+    <p style="margin-top: 0.6rem; font-size: 0.9rem; color: #4f6a7a;">—— 记录于一次简单的归档实验</p>
+</footer>
+
+</body>
+</html>
