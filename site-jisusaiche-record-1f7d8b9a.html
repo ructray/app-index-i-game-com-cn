@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速赛车 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f7f3ed;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2e2b27;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #fcfaf7;
+            border-radius: 28px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+            padding: 2.5rem 2rem 3rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            color: #1f1c19;
+            border-left: 6px solid #d9b382;
+            padding-left: 1.2rem;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #7a6f64;
+            margin-bottom: 2.2rem;
+            padding-left: 1.8rem;
+            font-style: italic;
+            border-bottom: 1px solid #e8dfd5;
+            padding-bottom: 0.8rem;
+        }
+
+        .grid-dir {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 1.8rem;
+            margin: 2.2rem 0 2.8rem;
+        }
+        .dir-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.6rem 1.5rem 1.4rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            border: 1px solid #ece5dc;
+            transition: box-shadow 0.2s;
+        }
+        .dir-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+        .dir-card h3 {
+            font-size: 1.15rem;
+            font-weight: 550;
+            color: #3d352e;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .dir-card h3::before {
+            content: "▹";
+            color: #b89265;
+            font-size: 1.2rem;
+        }
+        .dir-card p {
+            font-size: 0.95rem;
+            color: #4d443b;
+            margin: 0.4rem 0 0.8rem;
+        }
+        .dir-card .tag {
+            display: inline-block;
+            background: #efe9e1;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #5e5145;
+            letter-spacing: 0.3px;
+        }
+
+        .explain-block {
+            background: #f9f4ed;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.4rem;
+            border-left: 5px solid #d9b382;
+        }
+        .explain-block p {
+            margin-bottom: 0.9rem;
+        }
+        .explain-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tip-area {
+            background: #f1ebe3;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 0.8rem 1.2rem;
+        }
+        .tip-area .tip-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .tip-area .tip-content {
+            flex: 1;
+            min-width: 220px;
+        }
+        .tip-area .tip-content strong {
+            color: #3d332b;
+            font-weight: 600;
+        }
+        .tip-area .tip-content p {
+            margin: 0.2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .relate-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.6rem;
+            margin: 2.2rem 0 1.8rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid #e5dcd2;
+            border-bottom: 1px solid #e5dcd2;
+        }
+        .relate-item {
+            background: #ffffff;
+            border-radius: 40px;
+            padding: 0.35rem 1.4rem 0.35rem 1.8rem;
+            border: 1px solid #e3d9ce;
+            font-size: 0.9rem;
+            color: #3f3730;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .relate-item::before {
+            content: "·";
+            font-weight: 700;
+            color: #b0865b;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1.4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+        }
+        .faq-q {
+            font-weight: 550;
+            color: #3b332c;
+            font-size: 0.98rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            gap: 6px;
+        }
+        .faq-q::before {
+            content: "Q";
+            background: #d9c6b3;
+            color: #2f2a25;
+            font-weight: 600;
+            font-size: 0.7rem;
+            border-radius: 30px;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .faq-a {
+            color: #4f453c;
+            font-size: 0.9rem;
+            margin-left: 26px;
+            margin-bottom: 0.6rem;
+        }
+
+        .footnote {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e5dcd2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.8rem;
+            font-size: 0.88rem;
+            color: #62594f;
+        }
+        .footnote a {
+            color: #62594f;
+            text-decoration: none;
+            border-bottom: 1px dotted #c9bbad;
+            font-weight: 500;
+        }
+        .footnote a:hover {
+            border-bottom: 1px solid #7f6c5b;
+            color: #2f2924;
+        }
+
+        @media (max-width: 680px) {
+            body { padding: 1rem 0.8rem; }
+            .page { padding: 1.8rem 1rem 2.2rem; }
+            h1 { font-size: 1.7rem; padding-left: 0.8rem; border-left-width: 4px; }
+            .subhead { padding-left: 1rem; font-size: 0.9rem; }
+            .grid-dir { grid-template-columns: 1fr; gap: 1.2rem; }
+            .explain-block { padding: 1.2rem 1.2rem; }
+            .tip-area { padding: 1.2rem 1.2rem; flex-direction: column; }
+            .faq-mini { grid-template-columns: 1fr; gap: 0.8rem; }
+            .relate-grid { gap: 0.6rem; }
+            .relate-item { font-size: 0.82rem; padding: 0.2rem 1rem 0.2rem 1.4rem; }
+            .footnote { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>极速赛车 · 赛道之外</h1>
+    <div class="subhead">从引擎声到日常，一个关于驾驶与节奏的知识角落</div>
+
+    <!-- 目录式卡片布局 -->
+    <div class="grid-dir">
+        <div class="dir-card">
+            <h3>车辆与调校</h3>
+            <p>底盘设定、轮胎胎压、制动平衡 —— 这些细节如何影响你的圈速与公路表现。</p>
+            <span class="tag">基础参数</span>
+        </div>
+        <div class="dir-card">
+            <h3>走线逻辑</h3>
+            <p>外-内-外不止是过弯口诀，更是效率与安全的平衡。理解重心转移与路线选择。</p>
+            <span class="tag">驾驶技术</span>
+        </div>
+        <div class="dir-card">
+            <h3>耐力与节奏</h3>
+            <p>长距离驾驶中，如何保持专注、管理体力与车辆状态？节奏比单圈速度更重要。</p>
+            <span class="tag">体能/策略</span>
+        </div>
+        <div class="dir-card">
+            <h3>赛道日指南</h3>
+            <p>从装备检查到赛道礼仪，第一次下赛道前需要了解的事。安全永远是第一课。</p>
+            <span class="tag">入门准备</span>
+        </div>
+    </div>
+
+    <!-- 说明区 -->
+    <div class="explain-block">
+        <p>很多人把“极速”理解为单纯的快，但真正沉浸过驾驶的人会告诉你：<strong>极速是一种对细节的掌控感</strong> —— 什么时候收油、什么时候带刹车、视线放在哪个弯心。它不是冒险，而是一种需要知识储备和反复练习的技艺。</p>
+        <p>这个页面并非赛事报道，而是一个选题入口。我们把与<a href="https://site-jisusaiche.com" style="color:#4f3d30; font-weight:500; text-decoration:underline; text-decoration-color: #d9b382; text-underline-offset:3px;">极速赛车</a>相关的驾驶知识、车辆原理、赛道经验整理成若干方向，供你按需探索。你可以把它当作一本个人化的参考索引，也可以从中找到感兴趣的话题深入。</p>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-area">
+        <div class="tip-icon">⚡</div>
+        <div class="tip-content">
+            <strong>给你的小提示</strong>
+            <p>不必一开始就追求极限。先熟悉车辆响应，建立自己的“车感词汇表”。<br>
+            一个好的习惯是：每次驾驶后花三分钟回想一个处理得不够平顺的弯道，下次针对性调整。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <div style="margin: 1.8rem 0 0.8rem;">
+        <h2 style="font-size:1.2rem; font-weight:550; color:#3f352e; margin-bottom:0.6rem; letter-spacing:-0.01em;">你可能感兴趣的方向</h2>
+    </div>
+    <div class="relate-grid">
+        <span class="relate-item">悬挂几何入门</span>
+        <span class="relate-item">刹车点与循迹</span>
+        <span class="relate-item">雨天驾驶策略</span>
+        <span class="relate-item">驾驶模拟器训练</span>
+        <span class="relate-item">车辆重心与配重</span>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div style="margin: 2.2rem 0 0.6rem;">
+        <h2 style="font-size:1.2rem; font-weight:550; color:#3f352e; margin-bottom:1rem; letter-spacing:-0.01em;">常见问题摘要</h2>
+    </div>
+    <div class="faq-mini">
+        <div>
+            <div class="faq-q">新手应该先练什么？</div>
+            <div class="faq-a">建立正确的视线习惯和刹车感知，比盲目追求圈速有效得多。建议从低速弯道开始。</div>
+        </div>
+        <div>
+            <div class="faq-q">原厂车能直接下赛道吗？</div>
+            <div class="faq-a">可以，但建议检查制动液、刹车片余量、轮胎状态，并适当降低胎压以增加抓地力。</div>
+        </div>
+        <div>
+            <div class="faq-q">如何提升过弯信心？</div>
+            <div class="faq-a">渐进式练习：先慢速熟悉弯道半径，再逐步提高进弯速度，同时注意方向盘修正幅度。</div>
+        </div>
+        <div>
+            <div class="faq-q">极速赛车适合日常通勤吗？</div>
+            <div class="faq-a">这里讨论的是驾驶理念和技巧，与具体车型无关。安全、平稳、预见性驾驶同样适用于日常。</div>
+        </div>
+    </div>
+
+    <!-- 底部嵌入链接 -->
+    <div class="footnote">
+        <span>内容索引持续更新 · 基于真实驾驶经验整理</span>
+        <span>了解更多关于 <a href="https://site-jisusaiche.com">极速赛车</a> 的主题与讨论</span>
+    </div>
+
+    <!-- 隐藏但保留创作种子（仅用于变化，不显示） -->
+    <div style="display:none;">ba4b5decde58915a</div>
+</div>
+</body>
+</html>
